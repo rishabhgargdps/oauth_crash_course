@@ -21,9 +21,9 @@ router.get(
   })
 );
 
-//callback route for google rediret=ct
+//callback route for google redirect
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.send("You have reached the callback URI");
+  res.send(req.user);
 });
 
 module.exports = router;
